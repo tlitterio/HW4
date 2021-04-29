@@ -29,12 +29,16 @@ window.addEventListener('DOMContentLoaded', async function() {
   let pickupZip = availableRide.pickupLocation.zip
   let isPurple = availableRide.purpleRequested
   let serviceLevel  
+  let borderStyles
   if (isPurple == true){
     serviceLevel = `Noober Purple`
+    borderStyles = `border-8 border-purple-900`
   } else if (numberOfPassengers > 3) {
     serviceLevel = `Noober XL`
+    borderStyles = `border-4 border-gray-900`
   } else {
     serviceLevel = `Noober X`
+    borderStyles = `border border-gray-700`
   }
 
   //add the html to the DOM 
@@ -44,7 +48,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     <span>${serviceLevel}</span>
   </h1>
 
-  <div class="border-4 border-gray-900 p-4 my-4 text-left">
+  <div class="${borderStyles} p-4 my-4 text-left">
     <div class="flex">
       <div class="w-1/2">
         <h2 class="text-2xl py-1">${passengerFirstName} ${passengerFLastName}</h2>
